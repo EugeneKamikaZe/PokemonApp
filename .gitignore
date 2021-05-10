@@ -2,3 +2,8 @@ node_modules/
 .idea/
 # Project exclude paths
 /dist/
+/.gitattributes
+/package-lock.json
+/tsconfig.json
+/yarn.lock
+/yarn-error.log
