@@ -14,7 +14,6 @@ type myArray = {
 type myObj = {
     [index: number]: object;
 }
-
 interface myInterface {
     howIDoIt: string,
     simArray: myArray,
@@ -36,10 +35,10 @@ interface MyArray<T> {
     [N: number]: T;
 
     // map<U>(fn: (el: T) => U): U[]
-    reduce<U>(fn: (el: T, cur: T) => U): U
+    reduce<U>(fn: (acc: U, el: T) => U, initialValue: U): U
 }
 
-const tsArray: MyArray<number> = [1, 2, 3, 4]
+const tsArray: MyArray<number> = [1, 2]
 
-console.log(tsArray.reduce((i, j) => i + j))
+console.log(tsArray.reduce((i, j) => i + j, 12))
 // console.log(tsArray.map((i) => i + 2))
