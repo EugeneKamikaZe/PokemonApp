@@ -6,9 +6,14 @@ $danger: #D93E30;
 $white: #F2F2F2;
 $dark: #212121;
 
+$btn-green: #73D677;
+$btn-yellow: #F2CB07;
+$btn-blue: #07D6F2;
+
 //font-family
 $primary_font: 'Karla', sans-serif;
-$secondary_font: 'Source Sans Pro', sans-serif;
+$sourse_sans: 'Source Sans Pro', sans-serif;
+$roboto: 'Roboto', sans-serif;
 
 //headings
 h1,
@@ -48,7 +53,7 @@ h6 {
   line-height: 14px;
 }
 p {
-  font-family: $secondary_font;
+  font-family: $sourse_sans;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;

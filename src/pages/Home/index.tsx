@@ -16,7 +16,7 @@ const HomePage = () => {
                 <div className={s.contentText}>
                     <Heading tag={'h1'} ><strong>Find</strong> all your favorite <strong>Pokemon</strong></Heading>
                     <Heading tag={'h3'} >You can know the type of Pokemon, its strengths, disadvantages and abilities</Heading>
-                    <Button onClick={() => console.log('Click')}>
+                    <Button onClick={() => console.log('Click')} buttonSize={'normal'} buttonColor={'green'}>
                         See pokemons
                     </Button>
                 </div>

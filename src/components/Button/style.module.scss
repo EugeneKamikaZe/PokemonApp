@@ -2,19 +2,14 @@
 
 .root {
   position: relative;
-  background: #73D677;
   box-shadow: inset 0px -9px 0px rgba(0, 0, 0, 0.18);
   border: none;
   outline: none;
-  border-radius: 10px;
-  height: 66px;
   padding: 0 20px 8px;
   cursor: pointer;
 
   font-style: normal;
   font-weight: bold;
-  font-size: 23px;
-  line-height: 27px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,4 +37,34 @@
   &:hover.root:before {
     opacity: 1;
   }
+}
+
+.flex {
+  width: 100%;
+}
+
+//colors
+.green {
+  background: $btn-green;
+}
+.yellow {
+  background: $btn-yellow;
+}
+.lightblue {
+  background: $btn-blue;
+}
+
+//sizes
+.normal {
+  min-height: 66px;
+  width: 231px;
+  font-size: 23px;
+  line-height: 27px;
+  border-radius: 10px;
+}
+.small {
+  border-radius: 100px;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: $roboto;
 }
