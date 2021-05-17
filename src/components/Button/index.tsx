@@ -17,17 +17,17 @@ enum ButtonSize {
 
 interface ButtonProps {
     onClick: (event: React.MouseEvent<HTMLButtonElement>) => void,
-    flex?: boolean,
+    isFlex?: boolean,
     buttonSize?: string,
     buttonColor?: string,
 }
 
-const Button: React.FC<ButtonProps> = ({children, onClick, flex, buttonSize: ButtonSize, buttonColor: ButtonColor}) => {
+const Button: React.FC<ButtonProps> = ({children, onClick, isFlex, buttonSize: ButtonSize, buttonColor: ButtonColor}) => {
 
     return (
         <button
             type="button"
-            className={cn(s.root, s[ButtonSize as keyof typeof s], s[ButtonColor as keyof typeof s], {[s.flex]: flex})}
+            className={cn(s.root, s[ButtonSize as keyof typeof s], s[ButtonColor as keyof typeof s], {[s.flex]: isFlex})}
             onClick={onClick}
         >
             {children}
