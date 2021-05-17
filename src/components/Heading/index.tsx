@@ -8,7 +8,7 @@ interface MyHeading {
 
 const Heading: React.FC<MyHeading> = ({children, tag: Tag}) => {
     return (
-        <Tag className={s[Tag]}>{children}</Tag>
+        <Tag className={s[Tag as keyof typeof s]}>{children}</Tag>
     )
 }
 

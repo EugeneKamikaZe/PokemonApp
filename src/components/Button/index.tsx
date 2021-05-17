@@ -22,12 +22,18 @@ interface ButtonProps {
     buttonColor?: string,
 }
 
-const Button: React.FC<ButtonProps> = ({children, onClick, isFlex, buttonSize: ButtonSize, buttonColor: ButtonColor}) => {
+const Button: React.FC<ButtonProps> = ({
+                                           children,
+                                           onClick,
+                                           isFlex,
+                                           buttonSize = ButtonSize.normal,
+                                           buttonColor = ButtonColor.green
+                                       }) => {
 
     return (
         <button
             type="button"
-            className={cn(s.root, s[ButtonSize as keyof typeof s], s[ButtonColor as keyof typeof s], {[s.flex]: isFlex})}
+            className={cn(s.root, s[buttonSize as keyof typeof s], s[buttonColor as keyof typeof s], {[s.flex]: isFlex})}
             onClick={onClick}
         >
             {children}
