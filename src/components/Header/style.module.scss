@@ -1,0 +1,61 @@
+@import "../../varibales";
+
+.root {
+  height: 93px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(1, 28, 64, .2);
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1125px;
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pokemonLogo {
+  width: 158px;
+  height: 63px;
+}
+
+.menuWrap {
+  display: flex;
+  align-items: center;
+  max-width: 658px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.menuLink {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 29px;
+  color: $dark;
+  text-decoration: none;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    height: 3px;
+    width: 100%;
+    background: $dark;
+    border-radius: 6px;
+    transform: scaleX(0);
+    transition: transform ease-in-out .2s;
+  }
+
+  &:hover,
+  &.activeLink {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}

@@ -1,0 +1,61 @@
+//colors
+$primary: #F2B807;
+$second: #F28F16;
+$third: #F5DB13;
+$danger: #D93E30;
+$white: #F2F2F2;
+$dark: #212121;
+
+$btn-green: #73D677;
+$btn-yellow: #F2CB07;
+$btn-blue: #07D6F2;
+
+//font-family
+$primary_font: 'Karla', sans-serif;
+$sourse_sans: 'Source Sans Pro', sans-serif;
+$roboto: 'Roboto', sans-serif;
+
+//headings
+h1,
+h2,
+h3,
+h4,
+h6,
+h6 {
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+}
+
+h1 {
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: 4px;
+}
+h2 {
+  font-size: 64px;
+  line-height: 75px;
+}
+h3 {
+  font-size: 36px;
+  line-height: 42px;
+}
+h4 {
+  font-size: 24px;
+  line-height: 28px;
+}
+h5 {
+  font-size: 18px;
+  line-height: 21px;
+}
+h6 {
+  font-size: 12px;
+  line-height: 14px;
+}
+p {
+  font-family: $sourse_sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
