@@ -1,0 +1,22 @@
+.root {
+  height: 100vh;
+}
+
+.contentWrap {
+  margin-top: 72px;
+}
+
+.search {
+  margin-bottom: 48px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
