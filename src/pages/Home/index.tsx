@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 import Button from "../../components/Button";
 import Parallax from "../../components/Parallax";
@@ -14,7 +13,6 @@ import {navigate} from "hookrouter";
 const HomePage = () => {
     return (
         <div className={s.root}>
-            <Header/>
             <Layout className={s.contentWrap}>
                 <div className={s.contentText}>
                     <Heading tag={'h1'} ><strong>Find</strong> all your favorite <strong>Pokemon</strong></Heading>
