@@ -30,7 +30,7 @@ export interface Stats {
     speed: number;
 }
 
-const POKEMONS = [
+const POKEMONS: RootObject[] = [
     {
         "name_clean": "bulbasaur",
         "abilities": [
@@ -311,7 +311,7 @@ const Pokedex: React.FC = () => {
                 </div>
                 <div className={s.cards}>
                     {
-                        POKEMONS.map((item, id) => <PokemonCard key={id} {...item} />)
+                        POKEMONS.map((item) => <PokemonCard key={item.id} {...item} />)
                     }
                 </div>
             </Layout>

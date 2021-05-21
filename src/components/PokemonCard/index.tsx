@@ -26,8 +26,8 @@ const PokemonCard: React.FC<RootObject> = ({name, stats, types, id, img}) => {
                 </div>
                 <div className={s.labelWrap}>
                     {
-                        types.map((item, id) => (
-                            <span key={id} className={cn(s.label, s[item as keyof typeof s])}>{item}</span>
+                        types.map((item, index) => (
+                            <span key={index} className={cn(s.label, s[item as keyof typeof s])}>{item}</span>
                         ))
                     }
                 </div>
