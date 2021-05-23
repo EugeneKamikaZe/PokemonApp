@@ -4,7 +4,7 @@ import Heading from "../Heading";
 
 import s from './style.module.scss';
 
-interface RootObject {
+export interface RootObject {
     name_clean: string;
     abilities: string[];
     stats: Stats;
@@ -18,7 +18,7 @@ interface RootObject {
     order: number;
     weight: number;
 }
-interface Stats {
+export interface Stats {
     hp: number;
     attack: number;
     defense: number;

@@ -3,11 +3,17 @@ import Heading from "../../components/Heading";
 import Layout from "../../components/Layout";
 
 import s from './style.module.scss'
-import PokemonCard from "../../components/PokemonCard";
+import PokemonCard, {RootObject} from "../../components/PokemonCard";
 import req from "../../utils/request";
 
+interface Items {
+    total: string,
+    count: number,
+    pokemons: RootObject[]
+}
+
 const usePokemons = () => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState<Items>({} as Items)
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
 
