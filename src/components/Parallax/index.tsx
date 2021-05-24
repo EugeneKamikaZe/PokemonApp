@@ -24,6 +24,8 @@ const Parallax = () => {
         return () => window.removeEventListener('mousemove', handleMouseMove)
     }, [screenX, screenY])
 
+    {/*TO DO fix listener*/}
+
     return (
         <div className={s.root}>
             <div

@@ -3,7 +3,29 @@ import cn from "classnames";
 import Heading from "../Heading";
 
 import s from './style.module.scss';
-import {RootObject} from "../../pages/Pokedex";
+
+export interface RootObject {
+    name_clean: string;
+    abilities: string[];
+    stats: Stats;
+    types: string[];
+    img: string;
+    name: string;
+    base_experience: number;
+    height: number;
+    id: number;
+    is_default: boolean;
+    order: number;
+    weight: number;
+}
+export interface Stats {
+    hp: number;
+    attack: number;
+    defense: number;
+    special_attack: number;
+    special_defense: number;
+    speed: number;
+}
 
 const PokemonCard: React.FC<RootObject> = ({name, stats, types, id, img}) => {
     return (
