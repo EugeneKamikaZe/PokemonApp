@@ -1,3 +1,6 @@
+@import "../../varibales";
+@import "../../breakpoints";
+
 .root {
   height: 100vh;
 }
@@ -7,7 +10,12 @@
 }
 
 .search {
-  margin-bottom: 48px;
+  margin-bottom: 45px;
+
+  @include media(">phone", "<phone-lg") {
+    grid-template-columns: auto;
+    margin-bottom: 30px;
+  }
 }
 
 .title {
@@ -16,7 +24,35 @@
 }
 
 .cards {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  //@include media(">phone", "<phone-lg") {
+  //  grid-template-columns: auto;
+  //}
+  //
+  //@include media(">phone-lg", "<tablet") {
+  //  grid-template-columns: auto auto;
+  //}
+  //
+  //@include media(">desktop", "<desktop-lg") {
+  //  grid-template-columns: auto auto;
+  //}
+  //
+  //@include media(">desktop-lg") {
+  //  grid-template-columns: auto auto auto;
+  //}
+}
+
+.input {
+  display: block;
+  margin: 0 auto;
+  padding: 16px 32px;
+  height: 54px;
+  width: 95%;
+  background: $white;
+  box-shadow: 4px 4px 16px rgba(1, 28, 64, .2);
+  border-radius: 40px;
+  outline: none;
+  border: none;
 }
