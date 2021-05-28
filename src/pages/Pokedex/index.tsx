@@ -52,7 +52,7 @@ const Pokedex: React.FC = () => {
                     </label>
                 </div>
                 <div className={s.cards}>
-                    {!isLoading && data&& data.pokemons.map((item: PokemonsRequest) => <PokemonCard key={item.id} {...item} />)}
+                    {!isLoading && data && data.pokemons.map((item: PokemonsRequest) => <PokemonCard key={item.id} {...item} />)}
                 </div>
             </Layout>
         </div>
