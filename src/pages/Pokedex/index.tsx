@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Heading from "../../components/Heading";
 import Layout from "../../components/Layout";
 import PokemonCard from "../../components/PokemonCard";
@@ -6,8 +6,9 @@ import useData from "../../hook/getData";
 
 import s from './style.module.scss'
 
-import {IPokemons, PokemonsRequest} from "../../interface/pokemons";
+import {IPokemons} from "../../interface/pokemons";
 import useDebounce from "../../hook/useDebounce";
+import stringToCapitalize from "../../utils/stringToCapitalize";
 
 interface IQuery {
     name?: string,
@@ -40,11 +41,15 @@ const Pokedex: React.FC = () => {
         return <div>Something went wrong</div>
     }
 
+    useEffect(() => {
+        console.log('####', stringToCapitalize('some String asd Asd'))
+    }, [])
+
     return (
         <div className={s.root}>
             <Layout className={s.contentWrap}>
                 <div className={s.search}>
-                    <Heading tag={'h3'} classname={s.title}>
+                    <Heading size={'m'} className={s.title}>
                         {!isLoading && data && data.total} <strong>Pokemons</strong> for you to choose your favorite
                     </Heading>
                     <label>
@@ -52,7 +57,7 @@ const Pokedex: React.FC = () => {
                     </label>
                 </div>
                 <div className={s.cards}>
-                    {!isLoading && data && data.pokemons.map((item: PokemonsRequest) => <PokemonCard key={item.id} {...item} />)}
+                    {!isLoading && data && data.pokemons.map((item) => <PokemonCard key={item.id} {...item} />)}
                 </div>
             </Layout>
         </div>

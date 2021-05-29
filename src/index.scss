@@ -19,6 +19,15 @@ strong {
     font-weight: 700;
 }
 
+p {
+    font-family: $sourse_sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+}
+
 .grass,
 .bug {
     background-color: $grass;
@@ -38,7 +47,8 @@ strong {
 }
 
 .water,
-.ice {
+.ice,
+.flying {
     background-color: $ice;
 }
 
