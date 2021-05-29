@@ -41,10 +41,6 @@ const Pokedex: React.FC = () => {
         return <div>Something went wrong</div>
     }
 
-    useEffect(() => {
-        console.log('####', stringToCapitalize('some String asd Asd'))
-    }, [])
-
     return (
         <div className={s.root}>
             <Layout className={s.contentWrap}>

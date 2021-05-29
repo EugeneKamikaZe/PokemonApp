@@ -31,7 +31,7 @@ function getUrlWithParamsConfig(endpointConfig: string, params: object) {
         ...params,
     }
 
-    const pathname = Object.keys(query).reduce((acc, val) => {
+    apiConfigUri.pathname = Object.keys(query).reduce((acc, val) => {
         if (acc.indexOf(`{${val}}`) !== -1) {
             const result = acc.replace(`{${val}}`, query[val as keyof typeof query])
             delete query[val as keyof typeof query]
@@ -40,8 +40,6 @@ function getUrlWithParamsConfig(endpointConfig: string, params: object) {
 
         return acc
     }, apiConfigUri.pathname)
-
-    apiConfigUri.pathname = pathname
 
     if (method === 'GET') {
         apiConfigUri.query = {
