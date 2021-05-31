@@ -14,9 +14,9 @@ const Header = () => {
     return (
         <div className={s.root}>
             <div className={s.wrap}>
-                <div className={s.pokemonLogo}>
+                <A href="/" className={s.pokemonLogo}>
                     <PokemonLogo/>
-                </div>
+                </A>
 
                 <div className={s.menuWrap}>
                     {

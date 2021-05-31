@@ -6,3 +6,35 @@
   justify-content: center;
   align-items: center;
 }
+
+.heading {
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+}
+
+.xl {
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: 4px;
+}
+.l {
+  font-size: 64px;
+  line-height: 75px;
+}
+.m {
+  font-size: 36px;
+  line-height: 42px;
+}
+.s {
+  font-size: 24px;
+  line-height: 28px;
+}
+.xs {
+  font-size: 18px;
+  line-height: 21px;
+}
+.xxs {
+  font-size: 12px;
+  line-height: 14px;
+}

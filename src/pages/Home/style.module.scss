@@ -1,7 +1,8 @@
 @import "../../varibales";
 
 .root {
-  min-height: 100vh;
+  height: calc(100vh - 93px);
+  overflow: hidden;
   background: linear-gradient(180deg, $third 0%, $primary 100%)
 }
 
