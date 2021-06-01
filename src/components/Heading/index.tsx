@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import cn from "classnames";
 
 import s from "./style.module.scss";
@@ -7,9 +7,10 @@ interface IHeadingLvl {
     [n: string]: number
 }
 
-interface HeadingProps {
+export interface HeadingProps {
     size?: 'xl' | 'l' | 'm' | 's' | 'xs',
     className?: string,
+    children?: string | ReactNode,
 }
 
 const HEADING_LVL: IHeadingLvl = {
