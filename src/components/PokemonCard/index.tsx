@@ -3,16 +3,11 @@ import cn from "classnames";
 import Heading from "../Heading";
 
 import s from './style.module.scss';
-import {navigate} from "hookrouter";
 import {IPokemons} from "../../interface/pokemons";
 
 const PokemonCard: React.FC<IPokemons> = ({name, stats, types, id, img}) => {
-    const handleClick = () => {
-        navigate(`/pokedex/${id}`)
-    }
-
     return (
-        <div className={s.root} data-id={id} onClick={handleClick}>
+        <div className={s.root} data-id={id}>
             <div className={s.infoWrap}>
                 <Heading size={'s'} className={s.titleName}>{name}</Heading>
                 <div className={s.statWrap}>

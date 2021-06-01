@@ -32,10 +32,9 @@ const init = async () => {
             const pathIndexHTML = path.join(process.cwd(), 'dist', 'index.html')
             const template = handlebars.compile(fs.readFileSync(pathIndexHTML, 'utf8'))
             const result = ReactDom.renderToString(<App />)
-            const page = template({
+            return template({
                 content: result
             })
-            return page
         }
     });
 
