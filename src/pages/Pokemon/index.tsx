@@ -48,7 +48,7 @@ const Pokemon: React.FC<PokemonProps> = ({id}) => {
                                 <p>Abilities</p>
                                 <div className={s.abilities_items}>
                                     {
-                                        data.abilities.map((item, index) => (
+                                        data.abilities && data.abilities.map((item, index) => (
                                             <p key={index}>{item}<span className={s.divider}>&nbsp;-&nbsp;</span></p>
                                         ))
                                     }

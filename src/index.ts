@@ -4,4 +4,7 @@ import App from './App';
 
 import './index.scss';
 
-ReactDOM.render(React.createElement(App), document.getElementById('root'));
+window.addEventListener('load', () => {
+    ReactDOM.render(React.createElement(App), document.getElementById('root'))
+})
+
