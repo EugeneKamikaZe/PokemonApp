@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Heading from "../../components/Heading";
 import Layout from "../../components/Layout";
 import PokemonCard from "../../components/PokemonCard";
@@ -8,7 +8,6 @@ import s from './style.module.scss'
 
 import {IPokemons} from "../../interface/pokemons";
 import useDebounce from "../../hook/useDebounce";
-import stringToCapitalize from "../../utils/stringToCapitalize";
 
 interface IQuery {
     name?: string,
@@ -53,7 +52,7 @@ const Pokedex: React.FC = () => {
                     </label>
                 </div>
                 <div className={s.cards}>
-                    {!isLoading && data && data.pokemons.map((item) => <PokemonCard key={item.id} {...item} />)}
+                    {!isLoading && data && data.pokemons && data.pokemons.map(({name, stats, types, id, img}) => <PokemonCard key={id} name={name} stats={stats} types={types} img={img} />)}
                 </div>
             </Layout>
         </div>
