@@ -1,5 +1,7 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
@@ -22,11 +24,12 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['css-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.scss$/,
                 use: [
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -58,8 +61,19 @@ module.exports = {
             },
             {
                 test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-                use: ['url-loader'],
-            }
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'assets/',
+                        },
+                    }
+                ],
+            },
         ],
     },
+    plugins: [
+        new MiniCssExtractPlugin()
+    ]
 };

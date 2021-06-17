@@ -24,5 +24,5 @@ export interface Stats {
     speed: number,
 }
 
-export type ITypeRequest = string[]
-export type IPokemonRequest = [string]
+export type ITypesRequest = string[]
+export type IItemsRequest = [string]
