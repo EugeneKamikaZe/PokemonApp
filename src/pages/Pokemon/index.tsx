@@ -5,6 +5,7 @@ import cn from 'classnames'
 
 import s from './style.module.scss'
 import Heading from "../../components/Heading";
+import {configEndpoint} from "../../config";
 
 export interface PokemonProps {
     id: string | number
@@ -12,7 +13,7 @@ export interface PokemonProps {
 
 const Pokemon: React.FC<PokemonProps> = ({id}) => {
 
-    const {data, isLoading} = useData<IPokemons>('getPokemon', {id}, [])
+    const {data, isLoading} = useData<IPokemons>(configEndpoint.getPokemon, {id}, [])
 
     if (isLoading) {
         return (<div>Loading...</div>)

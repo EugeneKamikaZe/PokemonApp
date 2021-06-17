@@ -23,3 +23,6 @@ export interface Stats {
     special_defense: number,
     speed: number,
 }
+
+export type ITypeRequest = string[]
+export type IPokemonRequest = [string]

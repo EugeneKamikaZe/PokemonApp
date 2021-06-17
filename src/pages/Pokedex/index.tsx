@@ -1,13 +1,23 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux'
+
 import Heading from "../../components/Heading";
 import Layout from "../../components/Layout";
-import PokemonCard from "../../components/PokemonCard";
-import useData from "../../hook/getData";
 
 import s from './style.module.scss'
 
 import {IPokemons} from "../../interface/pokemons";
+import PokemonCard from "../../components/PokemonCard";
+import useData from "../../hook/getData";
 import useDebounce from "../../hook/useDebounce";
+import {
+    getPokemons, getPokemonsArray,
+    getPokemonsLoading,
+    getPokemonsTypes,
+    getPokemonsTypesLoading,
+    getTypesAction
+} from "../../store/pokemons";
+import {configEndpoint} from "../../config";
 
 interface IQuery {
     name?: string,
@@ -15,6 +25,13 @@ interface IQuery {
 }
 
 const Pokedex: React.FC = () => {
+    const dispatch = useDispatch()
+    const types = useSelector(getPokemonsTypes)
+    console.log('### types:', types)
+    const pokemons = useSelector(getPokemons)
+    console.log('### pokemons:', pokemons)
+    const isPokemonsLoading = useSelector(getPokemonsLoading)
+    const isTypesLoading = useSelector(getPokemonsTypesLoading)
     const [searchValue, setSearchValue] = useState('')
     const [query, setQuery] = useState<IQuery>({
         limit: 12
@@ -26,7 +43,12 @@ const Pokedex: React.FC = () => {
         data,
         isLoading,
         isError,
-    } = useData<IPokemons>('getPokemons', query, [debouncedValue])
+    } = useData<IPokemons>(configEndpoint.getPokemons, query, [debouncedValue])
+
+    useEffect(() => {
+        dispatch(getTypesAction())
+        dispatch(getPokemonsArray())
+    }, [])
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value)
@@ -51,6 +73,16 @@ const Pokedex: React.FC = () => {
                         <input className={s.input} type="text" name="name" placeholder="Encuentra tu pokémon..." value={searchValue} onChange={handleSearchChange}/>
                     </label>
                 </div>
+                {/*<div>*/}
+                {/*    {*/}
+                {/*        isTypesLoading ? <>Loading</>: types?.map(item => <div>{item}</div>)*/}
+                {/*    }*/}
+                {/*</div>*/}
+                {/*<div>*/}
+                {/*    {*/}
+                {/*        isPokemonsLoading ? <>Loading</>: pokemons?.map(item => <div>{item}</div>)*/}
+                {/*    }*/}
+                {/*</div>*/}
                 <div className={s.cards}>
                     {!isLoading && data && data.pokemons && data.pokemons.map(({name, stats, types, id, img}) => <PokemonCard key={id} name={name} stats={stats} types={types} img={img} />)}
                 </div>

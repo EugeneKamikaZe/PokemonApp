@@ -16,9 +16,21 @@ export const config = {
                 uri: {
                     pathname: '/api/v1/pokemon/{id}'
                 }
+            },
+            getPokemonsTypes: {
+                method: 'GET',
+                uri: {
+                    pathname: '/api/v1/types'
+                }
             }
         }
     }
+}
+
+export enum configEndpoint {
+    getPokemonsTypes = 'getPokemonsTypes',
+    getPokemon = 'getPokemon',
+    getPokemons = 'getPokemons'
 }
 
 export default config
