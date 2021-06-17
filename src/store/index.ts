@@ -1,14 +1,15 @@
 import {combineReducers} from "redux";
-import app from './app'
-import pokemons, {IPokemonsInitialState} from "./pokemons";
+import pokemons, {IPokemonsInitialState } from "./pokemons";
+// import pokemonsItems from "./pokemonsItem";
 
 export interface IInitialState {
-    pokemons: IPokemonsInitialState
+    pokemons: IPokemonsInitialState,
 }
 
 const createRootReducer = () =>
     combineReducers({
-        app,
+        // app,
+        // pokemonsItems,
         pokemons,
     })
 
