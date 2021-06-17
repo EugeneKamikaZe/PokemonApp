@@ -9,13 +9,14 @@ import ReactDom from 'react-dom/server'
 import {setPath} from 'hookrouter'
 import App from '../App'
 
+const port = process.env.PORT || 3000
+
 const IMG = /\.(jpg|jpeg|gif|png)(\?v=\d+\.\d+\.\d+)?$/;
 
 const init = async () => {
 
     const server = Hapi.server({
-        port: 3000,
-        host: 'localhost'
+        port
     });
 
     await server.register(require('@hapi/inert'))
